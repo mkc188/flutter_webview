@@ -7,6 +7,7 @@ import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.Window
 import android.webkit.*
 import io.flutter.app.FlutterActivity
 import io.flutter.plugin.common.MethodCall
@@ -129,6 +130,7 @@ class WebViewActivity : Activity() {
         super.onCreate(savedInstanceState)
         webView = WebView(this)
         title = ""
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(webView)
         webView.settings.javaScriptEnabled = intent.getBooleanExtra(JAVASCRIPT_ENABLED, false)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
