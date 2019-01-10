@@ -53,6 +53,8 @@
         }
         self.webViewController = [[WebViewController alloc] initWithPlugin:self navItems:buttons allowMedia:mediaPlayback];
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:self.webViewController];
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+        [self.navigationController setToolbarHidden:YES animated:YES];
         [self.hostViewController presentViewController:navigationController animated:true completion:nil];
         if (tintColor) {
             navigationController.navigationBar.tintColor = tintColor;
@@ -95,7 +97,7 @@
     NSString *r = components[0];
     NSString *g = components[1];
     NSString *b = components[2];
-    
+
     return [UIColor colorWithRed:[r floatValue]/255.0 green:[g floatValue]/255.0 blue:[b floatValue]/255.0 alpha:1.0];
 }
 
