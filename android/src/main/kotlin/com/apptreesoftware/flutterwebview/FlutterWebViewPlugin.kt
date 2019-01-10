@@ -200,7 +200,7 @@ class WebClient : WebViewClient() {
     override fun onReceivedError(view: WebView?, request: WebResourceRequest?,
                                  error: WebResourceError?) {
         super.onReceivedError(view, request, error)
-        view.loadUrl("about:blank")
+        view?.loadUrl("about:blank")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             FlutterWebViewPlugin.onError(
                 error?.description?.toString() ?: "An error occurred loading this page")
@@ -210,7 +210,7 @@ class WebClient : WebViewClient() {
     override fun onReceivedError(view: WebView?, errorCode: Int, description: String?,
                                  failingUrl: String?) {
         super.onReceivedError(view, errorCode, description, failingUrl)
-        view.loadUrl("about:blank")
+        view?.loadUrl("about:blank")
         FlutterWebViewPlugin.onError(description ?: "An error occurred loading this page")
     }
 
