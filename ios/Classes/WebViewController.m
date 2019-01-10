@@ -28,6 +28,7 @@
     self.webView.delegate = self;
     self.webView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     self.webView.allowsInlineMediaPlayback = YES;
+    self.webView.scrollView.bounces = NO;
     [self.view addSubview:self.webView];
 }
 
