@@ -76,7 +76,8 @@
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    [self.plugin handleWebViewLoadError:error.localizedDescription];
+    // [self.plugin handleWebViewLoadError:error.localizedDescription];
+    [self.plugin handleWebViewLoadError:[error.userInfo objectForKey:@"NSErrorFailingURLStringKey"]];
 }
 
 - (void)listenForRedirect:(RedirectPolicy *)redirect {
